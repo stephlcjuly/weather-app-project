@@ -50,8 +50,16 @@ function displayWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector(".current-weather-emoji").innerHTML =
+  document.querySelector(".current-weather-description").innerHTML =
     response.data.weather[0].main;
+  document.querySelector("#wind-speed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  let iconElement = document.querySelector(".icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/10d@2x.png`
+  );
 }
 
 function submitButton(event) {
