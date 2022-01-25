@@ -45,12 +45,12 @@ function searchCity(cityInput) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-fahrenheitTemperature = response.data.main.temp;
-
 function displayWeather(response) {
+  fahrenheitTemperature = response.data.main.temp;
+
   document.querySelector("h2").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
+    fahrenheitTemperature
   );
   document.querySelector(".current-weather-description").innerHTML =
     response.data.weather[0].main;
@@ -106,5 +106,5 @@ let fahrenheitTemperature = null;
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
-let fahrenheitLink = document.querySelector("#farenheit-link");
-celsiusLink.addEventListener("click", displayFahrenheit);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
