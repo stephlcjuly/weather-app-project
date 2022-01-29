@@ -36,8 +36,33 @@ function formatDate() {
   let date = now.getDate();
   return `${day} ${month} ${date}, ${hours}:${minutes}`;
 }
+
 let currentDate = document.querySelector(".current-date");
 currentDate.innerHTML = formatDate(now);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+   <div class="col">
+     <div class="card" style="width: 15rem">
+       <div class="card-body">
+         <h5 class="card-title" id="forecast-day">${day}</h5>
+         <p class="card-text" id="forecast-image">☀️</p>
+         <div class="temp" id="forecast-temp">45° F</div>
+       </div>
+     </div>
+   </div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function searchCity(cityInput) {
   let apiKey = `65dceb3147c1a28e1221b1b5336180c3`;
@@ -108,3 +133,5 @@ celsiusLink.addEventListener("click", displayCelsius);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+displayForecast();
