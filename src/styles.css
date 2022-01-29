@@ -1,3 +1,24 @@
+body {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background: radial-gradient(
+    circle at -8.9% 51.2%,
+    rgb(255, 124, 0) 0%,
+    rgb(255, 124, 0) 15.9%,
+    rgb(255, 163, 77) 15.9%,
+    rgb(255, 163, 77) 24.4%,
+    rgb(11, 145, 235) 24.5%,
+    rgba(60, 189, 240, 0.699) 66%
+  );
+}
+
+.card {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  border: 7px solid #056892;
+  border-radius: 20px;
+}
+
 h2 {
   font-size: 50px;
   font-weight: bold;
@@ -13,17 +34,22 @@ h2 {
 h3 {
   text-align: center;
   font-size: 30px;
+  padding-bottom: 0px;
 }
-.current-weather-description,
-.wind {
+.current-weather-description {
   text-align: center;
   font-size: 25px;
+}
+.wind {
+  text-align: center;
+  font-size: 15px;
+  padding-bottom: 30px;
 }
 .current-temp {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
 #temperature {
   font-size: 35px;
@@ -50,4 +76,5 @@ h3 {
 footer {
   text-align: center;
   padding-top: 240px;
+  color: white;
 }
